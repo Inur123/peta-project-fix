@@ -14,9 +14,10 @@
                 </ul>
             </div>
             <div>
+
                 <h3 class="text-lg font-bold mb-4">Lokasi</h3>
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3952.3526033590856!2d111.49908107513767!3d-7.858117678110624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwNTEnMjkuMiJTIDExMcKwMzAnMDYuMCJF!5e0!3m2!1sid!2sid!4v1736426093757!5m2!1sid!2sid"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4178.985994834728!2d111.47038739999999!3d-7.838570099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e799fb93a60f1eb%3A0xc881df8a35de923a!2sAhmad%20Segut%2C%20S.H.%20%26%20Partners!5e1!3m2!1sid!2sid!4v1739457143630!5m2!1sid!2sid"
                     class="w-full rounded-lg" style="border: 0" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
