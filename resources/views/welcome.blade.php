@@ -23,7 +23,7 @@
 
 <main class="container mx-auto px-4 py-8" style="margin-top: 50px">
     <div class="overflow-hidden flex lg:flex-row-reverse flex-col mb-8 mt-10" data-aos="zoom-in">
-        <img src="images/sdad.jpg" alt="Gambar Utama"
+        <img src="images/sdad.jpg" alt="Gambar Utama" loading="lazy"
             class="w-full lg:w-1/2 h-96 object-cover rounded-lg hidden lg:block" />
         <div class="lg:w-1/2 me-5"
             style="
@@ -72,7 +72,7 @@
                     <a href="{{ route($routeName, $berita->slug) }}" class="block">
                         <div
                             class="bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden flex flex-col relative hover:border-red-600 transition-all duration-300">
-                            <img src="{{ Storage::url($berita->thumbnail) }}" alt="{{ $berita->title }}"
+                            <img src="{{ Storage::url($berita->thumbnail) }}" loading="lazy" alt="{{ $berita->title }}"
                                 class="w-full h-48 object-cover" />
                             <div class="absolute top-2 right-2 bg-red-600 text-white px-2 py-1 rounded-full">
                                 <span class="text-xs">{{ $berita->category->name ?? 'Uncategorized' }}</span>
@@ -111,7 +111,7 @@
                                 <a href="{{ route('berita.show', $berita->slug) }}" class="block">
                                     <div
                                         class="bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden flex flex-col relative hover:border-red-600 transition-all duration-300">
-                                        <img src="{{ Storage::url($berita->thumbnail) }}" alt="{{ $berita->title }}"
+                                        <img src="{{ Storage::url($berita->thumbnail) }}" loading="lazy" alt="{{ $berita->title }}"
                                             class="w-full h-48 object-cover" />
                                         <div class="absolute top-2 right-2 bg-red-600 text-white px-2 py-1 rounded-full">
                                             <span class="text-xs">{{ $berita->category->name ?? 'Uncategorized' }}</span>
@@ -152,7 +152,7 @@
                             <a href="{{ route('opini.show', $berita->slug) }}" class="block">
                                 <div
                                     class="bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden flex flex-col relative hover:border-red-600 transition-all duration-300">
-                                    <img src="{{ Storage::url($berita->thumbnail) }}" alt="{{ $berita->title }}"
+                                    <img src="{{ Storage::url($berita->thumbnail) }}" loading="lazy" alt="{{ $berita->title }}"
                                         class="w-full h-48 object-cover" />
                                     <div class="absolute top-2 right-2 bg-red-600 text-white px-2 py-1 rounded-full">
                                         <span class="text-xs">{{ $berita->category->name ?? 'Uncategorized' }}</span>
@@ -192,7 +192,7 @@
                             <a href="{{ route('podcast.show', $berita->slug) }}" class="block">
                                 <div
                                     class="bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden flex flex-col relative hover:border-red-600 transition-all duration-300">
-                                    <img src="{{ Storage::url($berita->thumbnail) }}" alt="{{ $berita->title }}"
+                                    <img src="{{ Storage::url($berita->thumbnail) }}" loading="lazy" alt="{{ $berita->title }}"
                                         class="w-full h-48 object-cover" />
                                     <div class="absolute top-2 right-2 bg-red-600 text-white px-2 py-1 rounded-full">
                                         <span class="text-xs">{{ $berita->category->name ?? 'Uncategorized' }}</span>

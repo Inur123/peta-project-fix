@@ -15,7 +15,7 @@ class OpiniController extends Controller
             })
             ->where('is_published', 1) // Hanya ambil yang is_published = 1
             ->latest()
-            ->get();
+            ->paginate(8);
 
         return view('opini.index', compact('opini'));
     }

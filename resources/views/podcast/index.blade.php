@@ -41,6 +41,10 @@
                     </a>
                     @endforeach
                 </div>
+                <!-- Pagination -->
+                <div class="mt-6 flex justify-center">
+                    {{ $podcast->links('vendor.pagination.custom') }}
+                </div>
             @endif
         </div>
 

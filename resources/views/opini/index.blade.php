@@ -44,6 +44,10 @@
                     </a>
                     @endforeach
                 </div>
+               <!-- Pagination -->
+               <div class="mt-6 flex justify-center">
+                {{ $opini->links('vendor.pagination.custom') }}
+            </div>
             @endif
         </div>
 

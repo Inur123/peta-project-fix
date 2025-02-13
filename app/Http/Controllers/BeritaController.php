@@ -8,16 +8,17 @@ use Illuminate\Http\Request;
 class BeritaController extends Controller
 {
     public function index()
-    {
-        $berita = Post::whereHas('category', function ($query) {
-                $query->where('name', 'Berita');
-            })
-            ->where('is_published', 1) // Hanya ambil yang is_published = 1
-            ->latest()
-            ->get();
+{
+    $berita = Post::whereHas('category', function ($query) {
+            $query->where('name', 'Berita');
+        })
+        ->where('is_published', 1) // Hanya ambil yang is_published = 1
+        ->latest()
+        ->paginate(8); // Menampilkan 9 berita per halaman
 
-        return view('berita.index', compact('berita'));
-    }
+    return view('berita.index', compact('berita'));
+}
+
 
 
     public function show($slug)

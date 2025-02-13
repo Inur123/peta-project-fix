@@ -109,7 +109,7 @@
 
     <!-- Tombol Scroll ke Atas -->
     <button id="scrollToTopBtn" onclick="scrollToTop()"
-        class="hidden fixed bottom-5 right-5 w-12 h-12 bg-peta-red text-white rounded-full flex items-center justify-center shadow-lg transition-opacity duration-300">
+        class="hidden fixed bottom-5 right-5 w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center shadow-lg transition-opacity duration-300">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
             stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
