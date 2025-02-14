@@ -3,19 +3,25 @@
     <div class="bg-white rounded-lg shadow-md p-6 mb-8">
         <h2 class="text-xl font-bold mb-2">Iklan</h2>
         <ul class="space-y-4">
+            @if ($iklan->isEmpty())
+            <p class="text-gray-500">Belum ada iklan</p>
+        @else
             @foreach ($iklan as $item)
                 <li class="flex items-center justify-center">
                     <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}"
                         class="rounded-lg object-contain" style="width: 400px; height: 400px" />
                 </li>
             @endforeach
+            @endif
         </ul>
     </div>
     <!-- Video Section -->
     <div class="bg-white rounded-lg shadow-md p-6 mb-8">
         <h2 class="text-xl font-bold mb-4">Vidio Terbaru</h2>
         <div class="space-y-4">
-            <div>
+            @if ($videos_terbaru->isEmpty())
+                <p class="text-gray-500">Belum ada vidio</p>
+            @else
                 @foreach ($videos_terbaru as $video)
                     <div class="h-40 mb-2">
                         <iframe src="{{ $video->url }}" title="YouTube video player" frameborder="0"
@@ -23,9 +29,10 @@
                             allowfullscreen style="height: 100%; width: 100%; border-radius: 10px"></iframe>
                     </div>
                 @endforeach
-            </div>
+            @endif
         </div>
     </div>
+
     <div class="bg-white rounded-lg shadow-md p-6 mb-8">
         <h2 class="text-xl font-bold mb-4">Post Populer</h2>
         <ul class="space-y-4">
@@ -64,8 +71,12 @@
             @foreach($usedTags as $tag)
                 <span class="bg-gray-200 px-2 py-1 rounded-full text-sm">#{{ $tag->name }}</span>
             @endforeach
+
         </div>
+     @else
+        <p class="text-gray-500">Belum ada tag populer.</p>
     @endif
+
 
 
 
