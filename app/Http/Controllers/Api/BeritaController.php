@@ -10,27 +10,37 @@ class BeritaController extends Controller
 {
     public function index()
     {
-        // Ambil berita yang dipublish dengan kategori 'Berita'
+        // Ambil berita yang dipublish dengan kategori 'Berita' beserta tags
         $berita = Post::whereHas('category', function ($query) {
                 $query->where('name', 'Berita');
             })
-            ->where('is_published', 1) // Hanya ambil yang is_published = 1
+            ->where('is_published', 1)
+            ->with('tags:id,name') // Ambil tag yang terkait
             ->latest()
             ->get();
 
-        // Kembalikan data sebagai JSON
+        // Format response agar hanya mengirim nama tags
+        $berita->each(function ($post) {
+            $post->tags = $post->tags->pluck('name'); // Ambil hanya nama tag
+        });
+
         return response()->json($berita);
     }
 
     public function show($slug)
     {
-        // Ambil berita berdasarkan slug yang dipublish
-        $berita = Post::where('slug', $slug)->where('is_published', 1)->firstOrFail();
+        // Ambil berita berdasarkan slug yang dipublish beserta tags
+        $berita = Post::where('slug', $slug)
+            ->where('is_published', 1)
+            ->with('tags:id,name') // Ambil tags
+            ->firstOrFail();
 
         // Tambah jumlah kunjungan
         $berita->increment('visits');
 
-        // Kembalikan data berita sebagai JSON
+        // Format response agar hanya mengirim nama tags
+        $berita->tags = $berita->tags->pluck('name');
+
         return response()->json($berita);
     }
 }
